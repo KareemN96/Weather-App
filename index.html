@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="shortcut icon" href="./Imgs/cloud.svg" type="Cloud" />
+    <!-- Bootstrap File-->
+    <link rel="stylesheet" href="./Css/bootstrap.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./Css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS File -->
+    <link rel="stylesheet" href="./Css/style.css" />
+  </head>
+  <body class="bg-primary-subtle">
+    <nav class="navbar navbar-expand-lg p-4 bg-dark-subtle">
+      <div class="container">
+        <a class="navbar-brand d-flex" href="#"
+          ><img src="./Imgs/cloud.png" alt="cloud Logo" class="pe-2" />
+          <div class="nav-content text-primary-emphasis">
+            <h5 class="fs-6 mt-2">Weather</h5>
+            <h6>tagline goes here</h6>
+          </div></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+            <li class="nav-item me-5">
+              <a class="nav-link border border-3 border-primary rounded-5 active text-primary" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link" href="#">Live Cameras</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link" href="#">Photo</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <header>
+        <div class="container">
+          <div class="row m-0 justify-content-center">
+            <div class="col-10 search-bar position-relative pt-5">
+              <input
+                type="text"
+                class="form-control rounded-pill pt-3 pb-3 ps-4"
+                id="search-bar"
+                placeholder="Find Your Location..."
+              />
+              <a
+                href="#"
+                class="btn btn-info bg-opacity-50 text-white rounded-pill"
+                >Find</a
+              >
+            </div>
+          </div>
+          <div class="row justify-content-center mb-5" id="weatherDisp"></div>
+        </div>
+      </header>
+    </main>
+    <footer class="bg-primary">
+      <div class="container footer">
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="col-10 sub-bar position-relative">
+              <input
+                type="text"
+                class="form-control rounded-pill pt-3 pb-3 ps-4"
+                id="sub-bar"
+                placeholder="Enter Your E-mail to Subscribe..."
+              />
+              <a
+                href="#"
+                class="btn btn-info bg-opacity-50 text-white rounded-pill"
+                >Find</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-3 d-flex">
+            <a href="https://www.facebook.com/"  class="text-decoration-none text-info-emphasis">
+              <i class="fa-brands fa-facebook-f fa-fw me-1"></i>
+            </a>
+            <a href="https://x.com/" class="text-decoration-none text-info-emphasis">
+              <i class="fa-brands fa-twitter fa-fw me-1"></i>
+            </a>
+            <a href="https://www.google.com/" class="text-decoration-none text-info-emphasis">
+              <i class="fa-brands fa-google-plus-g fa-fw me-1"></i>
+            </a>
+            <a href="https://www.pinterest.com/" class="text-decoration-none text-info-emphasis">
+              <i class="fa-brands fa-pinterest fa-fw"></i>
+            </a>
+          </div>
+        </div>
+        <p class="text-white">Copyright 2024. <span class="fs-5 text-light-emphasis">Designed by K-N</span>. All rights reserved</p>
+      </div>
+    </footer>
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/main.js"></script>
+  </body>
+</html>
