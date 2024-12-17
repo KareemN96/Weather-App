@@ -3,12 +3,10 @@ async function allData(callData) {
   const weatherData = await fetch(
     `http://api.weatherapi.com/v1/forecast.json?key=fb32a58b98784df7a9382224241512&q=${callData}&days=3`
   );
-  let allWeatherData = await weatherData.json();
+  const allWeatherData = await weatherData.json();
   dataContainer = allWeatherData;
   currentWeather(dataContainer.location, dataContainer.current);
   anotherDays(dataContainer.forecast.forecastday);
-  console.log(dataContainer.location);
-  console.log(dataContainer.forecast.forecastday);
 }
 allData("Alexandria");
 document.getElementById("search-bar").addEventListener("keyup", function (e) {
