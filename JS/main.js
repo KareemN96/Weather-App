@@ -1,7 +1,7 @@
 let dataContainer = [];
-const apiUrl = 'https://api.weatherapi.com/v1/forecast.json?key=4cb8a9468f6a4caa8c465407241812';
 async function allData(callData) {
-  const weatherData = await fetch(apiUrl + `&q=${callData}&days=3`);
+  const apiUrl = 'https://api.weatherapi.com/v1/forecast.json?key=4cb8a9468f6a4caa8c465407241812&q=${callData}&days=3';
+  const weatherData = await fetch(apiUrl);
   const allWeatherData = await weatherData.json();
   dataContainer = allWeatherData;
   currentWeather(dataContainer.location, dataContainer.current);
