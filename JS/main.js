@@ -1,8 +1,7 @@
 let dataContainer = [];
+const apiUrl = `http://api.weatherapi.com/v1/forecast.json?key=fb32a58b98784df7a9382224241512`;
 async function allData(callData) {
-  const weatherData = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=fb32a58b98784df7a9382224241512&q=${callData}&days=3`
-  );
+  const weatherData = await fetch(apiUrl + `&q=${callData}&days=3`);
   const allWeatherData = await weatherData.json();
   dataContainer = allWeatherData;
   currentWeather(dataContainer.location, dataContainer.current);
@@ -49,12 +48,8 @@ function currentWeather(loca, curr) {
   } <sup>o</sup>C</span>
   <img src="${
     curr.condition.icon
-  }" class="col-12 w-auto fw-bolder img-fluid" alt="${
-    curr.condition.text
-  }">
-  <span class="col-12 text-primary fw-normal">${
-    curr.condition.text
-  }</span>
+  }" class="col-12 w-auto fw-bolder img-fluid" alt="${curr.condition.text}">
+  <span class="col-12 text-primary fw-normal">${curr.condition.text}</span>
   <div class="footer-content col-12 d-flex">
   <span>
                     <i class="fa-solid fa-umbrella me-2"></i>20%</span>
@@ -63,14 +58,14 @@ function currentWeather(loca, curr) {
                     </div>
                     </div>
                     </div>`;
-                    document.getElementById("weatherDisp").innerHTML = today;
-                  }
-                  
-                  function anotherDays(daysData) {
-                    let otherDays = "";
-                    for (let i = 1; i < daysData.length; i++) {
-                      const date = new Date(daysData[i].date);
-                      otherDays += `<div class="col-lg ps-0 pe-0 ms-3 me-3 mb-4 gy-5">
+  document.getElementById("weatherDisp").innerHTML = today;
+}
+
+function anotherDays(daysData) {
+  let otherDays = "";
+  for (let i = 1; i < daysData.length; i++) {
+    const date = new Date(daysData[i].date);
+    otherDays += `<div class="col-lg ps-0 pe-0 ms-3 me-3 mb-4 gy-5">
                       <div
                       class="head-content d-flex justify-content-center align-items-center bg-info-subtle ps-3 pe-3 pt-3 pb-3 rounded-5"
                       >
@@ -80,8 +75,8 @@ function currentWeather(loca, curr) {
                       <img src="${
                         daysData[i].day.condition.icon
                       }" class="col-12 w-auto fw-bolder m-auto img-fluid" alt="${
-                        daysData[i].day.condition.text
-                      }">
+      daysData[i].day.condition.text
+    }">
                       <span class="col-12 fs-4 fw-bolder lh-base">${
                         daysData[i].day.maxtemp_c
                       } <sup>o</sup>C</span>
@@ -94,6 +89,6 @@ function currentWeather(loca, curr) {
   </div>
   </div>
   `;
-}
-document.getElementById("weatherDisp").innerHTML += otherDays;
+  }
+  document.getElementById("weatherDisp").innerHTML += otherDays;
 }
