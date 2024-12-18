@@ -11,19 +11,22 @@ body {
 .nav-content h6 {
     font-size: 10px;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     border: 3px solid #0D6EFD;
-    border-radius:2rem;
+    border-radius: 2rem;
     color: #0D6EFD;
 
 }
-header {
+
+.header {
     background-image: url(../Imgs/banner.png);
     background-repeat: no-repeat;
 }
 
 .search-bar input {
     background-color: transparent;
+    color: aquamarine;
 }
 
 .search-bar input::placeholder {
@@ -35,6 +38,7 @@ header {
     background-color: transparent;
     color: aquamarine;
     font-weight: bold;
+
 }
 
 .search-bar a {
@@ -51,6 +55,7 @@ header {
 
 .sub-bar input {
     background-color: transparent;
+    color: aquamarine;
 }
 
 .sub-bar input::placeholder {
@@ -88,6 +93,10 @@ header {
 }
 
 @media(max-width: 990px) {
+    header .container {
+        width: 75% !important;
+    }
+
     .navbar-collapse ul {
         background-color: rgb(8, 181, 197);
         margin: 0 !important;
@@ -96,12 +105,16 @@ header {
     }
 
     .navbar-collapse a {
-        border-top: 1px solid  #0D6EFD !important;
+        border-top: 1px solid #0D6EFD !important;
         border-radius: 0 !important;
-        border-left:0 !important;
+        border-left: 0 !important;
         border-bottom: 0 !important;
         border-right: 0 !important;
         color: black !important;
+    }
+
+    .btn {
+        padding: 11px 25px !important;
     }
 }
 
