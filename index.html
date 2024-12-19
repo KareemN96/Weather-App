@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="./Css/style.css" />
   </head>
   <body class="bg-dark-subtle">
-    <nav class="navbar navbar-expand-lg p-4 bg-dark-subtle">
+    <nav class="navbar navbar-expand-lg p-5 bg-dark-subtle">
       <div class="container">
         <a class="navbar-brand d-flex" href="./index.html"
           ><img src="./Imgs/cloud.png" alt="cloud Logo" class="pe-2" />
@@ -67,6 +67,13 @@
       </div>
     </nav>
     <main>
+      <button
+        onclick="getLocation()"
+        class="btn text-primary border-primary rounded-5 mb-2 position-absolute"
+        style="right: 10px; top: 120px"
+      >
+        <i class="fa-solid fa-street-view me-2"></i>Get Your Location
+      </button>
       <section class="header">
         <div class="row m-0 justify-content-center">
           <div class="col-10 search-bar position-relative pt-5">
@@ -77,14 +84,18 @@
               placeholder="Find Your Location..."
             />
             <a
-              href="./index.html"
-              class="btn btn-info bg-opacity-50 text-white rounded-pill"
+              class="btn btn-info bg-transparent text-white rounded-pill"
               >Find</a
             >
           </div>
         </div>
         <div class="container">
-          <div class="row justify-content-center mb-5" id="weatherDisp"></div>
+          <div class="row justify-content-center mb-5" id="weatherDisp">
+            <div class="spinner">
+              <div class="dot1 bg-info"></div>
+              <div class="dot2 bg-info"></div>
+            </div>
+          </div>
         </div>
       </section>
       <section>
@@ -92,25 +103,37 @@
           <div class="row justify-content-center align-items-center g-2 mt-5">
             <div class="col-lg-12 mb-5 mt-5">
               <h4
-              class="bg-transparent p-3 text-center text-primary border border-primary rounded-5 mb-4"
-            >
-            <i class="fa-regular fa-clock me-3"></i>Forecast Per Hours<i class="fa-regular fa-clock ms-3"></i>
-            </h4>
+                class="bg-transparent p-3 text-center text-primary border border-primary rounded-5 mb-4"
+              >
+                <i class="fa-regular fa-clock me-3"></i>Forecast Per Hours<i
+                  class="fa-regular fa-clock ms-3"
+                ></i>
+              </h4>
               <div
                 class="row justify-content-center align-items-center g-2"
                 id="hoursDay"
-              ></div>
+              >
+              <div class="spinner">
+                <div class="dot1 bg-info"></div>
+                <div class="dot2 bg-info"></div>
+              </div></div>
             </div>
             <div class="col-lg-12 mb-5 mt-5">
               <h4
                 class="bg-transparent p-3 text-center text-primary border border-primary rounded-5 mb-4"
               >
-                <i class="fa-solid fa-wind me-3"></i>Forecast Wind Speed<i class="fa-solid fa-wind ms-3"></i>
+                <i class="fa-solid fa-wind me-3"></i>Forecast Wind Speed<i
+                  class="fa-solid fa-wind ms-3"
+                ></i>
               </h4>
               <div
                 class="row justify-content-center align-items-center g-2"
                 id="windSpeed"
-              ></div>
+              >
+              <div class="spinner">
+                <div class="dot1 bg-info"></div>
+                <div class="dot2 bg-info"></div>
+              </div></div>
             </div>
           </div>
         </div>

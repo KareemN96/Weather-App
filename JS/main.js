@@ -7,9 +7,16 @@ async function allData(callData) {
   currentWeather(dataContainer.location, dataContainer.current);
   anotherDays(dataContainer.forecast.forecastday);
   dayPerHours(dataContainer.forecast.forecastday[0].hour);
-  console.log(dataContainer.forecast.forecastday[0].hour);
 }
-allData("Alexandria");
+allData("Cairo");
+function showPosition(position) {
+  allData(position.coords.latitude + "+" + position.coords.longitude);
+}
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+}
 document.getElementById("search-bar").addEventListener("keyup", function (e) {
   allData(e.target.value);
 });
@@ -39,7 +46,7 @@ const months = [
 function currentWeather(loca, curr) {
   const date = new Date(curr.last_updated);
   let today = `<div class="col-lg ps-0 pe-0 ms-3 me-3 mb-4 gy-5">
-  <div class="head-content d-flex justify-content-between bg-info p-3 rounded-5">
+  <div class="head-content d-flex justify-content-between  p-3 rounded-5" style="background-color:#194a7a">
   <small class="text-white">${
     days[date.getDay()]
   }<i class="fa-regular fa-calendar-days fs-4 ms-2"></i></small>
@@ -47,7 +54,7 @@ function currentWeather(loca, curr) {
     date.getDate() + " " + months[date.getMonth()]
   }</small>
   </div>
-  <div class="row bg-info-subtle m-0 rounded-5 p-2 mt-2 h-100">
+  <div class="row m-0 rounded-5 p-2 mt-2 h-100" style="background-color:#a3b7ca">
   <span class="col-12 mt-1 text-primary"><i class="fa-solid fa-location-dot me-1"></i>${
     loca.name
   }</span>
@@ -80,7 +87,7 @@ function anotherDays(daysData) {
   for (let i = 1; i < daysData.length; i++) {
     const date = new Date(daysData[i].date);
     otherDays += `<div class="col-lg ps-0 pe-0 ms-3 me-3 mb-4 gy-5">
-              <div class="head-content d-flex justify-content-between bg-info-subtle text-primary p-3 rounded-5">
+              <div class="head-content d-flex justify-content-between text-primary p-3 rounded-5" style="background-color:#a3b7ca">
               <small>${
                 days[date.getDay()]
               }<i class="fa-regular fa-calendar-days fs-4 ms-2"></i></small>
@@ -88,7 +95,7 @@ function anotherDays(daysData) {
                 date.getDate() + " " + months[date.getMonth()]
               }</small>
               </div>
-                      <div class="row text-center bg-info m-0 rounded-5 p-2 mt-2 h-100">
+                      <div class="row text-center m-0 rounded-5 p-2 mt-2 h-100" style="background-color:#194a7a">
                       <img src="${
                         daysData[i].day.condition.icon
                       }" class="col-12 w-auto fw-bolder m-auto img-fluid" alt="${
