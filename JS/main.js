@@ -107,7 +107,7 @@ function anotherDays(daysData) {
   <span class="col-12 fs-6 fw-light text-white">${
     daysData[i].day.mintemp_c
   } <sup>o</sup>C</span>
-  <span class="col-12 text-primary fw-normal">${
+  <span class="col-12 text-white fw-normal">${
     daysData[i].day.condition.text
   }</span>
   </div>
@@ -167,14 +167,3 @@ function dayPerHours(dhCurr) {
   document.querySelector("#hoursDay").innerHTML = dayHour;
   document.querySelector("#windSpeed").innerHTML = dayWind;
 }
-// const tN = new Date();
-// let tH = tN.getHours();
-// if (tH > 11) {
-//   tH = tH - 12 + " PM";
-//   tH = tH.replace("0 PM", "12 PM");
-//   tH = tH.replace("112 PM", "10 PM");
-// } else {
-//   if (tH === 0) tH = 12;
-//   tH = tH + " AM";
-// }
-// console.log(tH);
