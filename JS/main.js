@@ -117,43 +117,41 @@ function anotherDays(daysData) {
   document.getElementById("weatherDisp").innerHTML += otherDays;
 }
 function dayPerHours(dhCurr) {
-  const tN = new Date();
-  let tH = tN.getHours();
+  const tN = new Date().getHours();
+  
   let dayHour = ``,
     dayWind = ``;
-  for (let i = tH; i < dhCurr.length; i++) {
-    const d = new Date(dhCurr[i].time);
-    let h = d.getHours();
-    if (h > 11) {
-      h = h - 12 + " PM";
-      h = h.replace("0 PM", "12 PM");
-      h = h.replace("112 PM", "10 PM");
+  for (let i = tN; i < dhCurr.length; i++) {
+    let d = new Date(dhCurr[i].time).getHours();
+    if (d > 11) {
+      d = d - 12 + " PM";
+      d = d.replace("0 PM", "12 PM");
+      d = d.replace("112 PM", "10 PM");
     } else {
-      if (h === 0) h = 12;
-      h = h + " AM";
+      if (d === 0) d = 12;
+      d = d + " AM";
     }
     dayHour += `<div class="col-4">
                     <div class="card text-center p-3 rounded-5 bg-transparent text-primary border-primary">
-                      <h6><i class="fa-regular fa-clock me-2"></i>${h}</h6>
+                      <h6><i class="fa-regular fa-clock me-2"></i>${d}</h6>
                       <img src="${dhCurr[i].condition.icon}" alt="${dhCurr[i].condition.text}" class="w-auto fw-bolder m-auto img-fluid">
                       <small><i class="fa-solid fa-temperature-three-quarters me-1"></i>${dhCurr[i].temp_c}<sup>o</sup>C</small>
                   </div>
                 </div>`;
   }
-  for (let w = tH; w < dhCurr.length; w++) {
-    const d = new Date(dhCurr[w].time);
-    let h = d.getHours();
-    if (h > 11) {
-      h = h - 12 + " PM";
-      h = h.replace("0 PM", "12 PM");
-      h = h.replace("112 PM", "10 PM");
+  for (let w = tN; w < dhCurr.length; w++) {
+    let d = new Date(dhCurr[w].time).getHours();
+    if (d > 11) {
+      d = d - 12 + " PM";
+      d = d.replace("0 PM", "12 PM");
+      d = d.replace("112 PM", "10 PM");
     } else {
-      if (h === 0) h = 12;
-      h = h + " AM";
+      if (d === 0) d = 12;
+      d = d + " AM";
     }
     dayWind += `<div class="col-4">
                   <div class="card text-center p-2 rounded-5 bg-transparent text-primary border-primary">
-                    <h6><i class="fa-regular fa-clock me-2"></i>${h}</h6>
+                    <h6><i class="fa-regular fa-clock me-2"></i>${d}</h6>
                     <img src="Imgs/navigation.png" alt="navigation" class="w-25 fw-bolder m-auto mt-3 mb-3 " style="transform: rotate(${dhCurr[w].wind_degree}deg);">
                     <small><i class="fa-solid fa-wind me-2"></i>${dhCurr[w].wind_kph} km/h</small>
                   </div>
