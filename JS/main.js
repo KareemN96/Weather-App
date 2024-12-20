@@ -113,17 +113,12 @@ function anotherDays(daysData) {
   </div>
   </div>
   `;
-}
-document.getElementById("weatherDisp").innerHTML += otherDays;
+  }
+  document.getElementById("weatherDisp").innerHTML += otherDays;
 }
 function dayPerHours(dhCurr) {
   const tN = new Date();
-    let tH = tN.getHours();
-    if (tH > 11) {
-      tH = tH - 12
-    } else {
-      if (tH === 0) tH = 12;
-    }
+  let tH = tN.getHours();
   let dayHour = ``,
     dayWind = ``;
   for (let i = tH; i < dhCurr.length; i++) {
