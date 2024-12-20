@@ -113,13 +113,21 @@ function anotherDays(daysData) {
   </div>
   </div>
   `;
-  }
-  document.getElementById("weatherDisp").innerHTML += otherDays;
+}
+document.getElementById("weatherDisp").innerHTML += otherDays;
 }
 function dayPerHours(dhCurr) {
+  const tN = new Date();
+    let tH = tN.getHours();
+    if (tH > 11) {
+      tH = tH - 12
+    } else {
+      if (tH === 0) tH = 12;
+      tH = tH;
+    }
   let dayHour = ``,
     dayWind = ``;
-  for (let i = 0; i < dhCurr.length; i++) {
+  for (let i = tH; i < dhCurr.length; i++) {
     const d = new Date(dhCurr[i].time);
     let h = d.getHours();
     if (h > 11) {
@@ -138,8 +146,7 @@ function dayPerHours(dhCurr) {
                   </div>
                 </div>`;
   }
-
-  for (let w = 0; w < dhCurr.length; w++) {
+  for (let w = tH; w < dhCurr.length; w++) {
     const d = new Date(dhCurr[w].time);
     let h = d.getHours();
     if (h > 11) {
@@ -161,3 +168,14 @@ function dayPerHours(dhCurr) {
   document.querySelector("#hoursDay").innerHTML = dayHour;
   document.querySelector("#windSpeed").innerHTML = dayWind;
 }
+// const tN = new Date();
+// let tH = tN.getHours();
+// if (tH > 11) {
+//   tH = tH - 12 + " PM";
+//   tH = tH.replace("0 PM", "12 PM");
+//   tH = tH.replace("112 PM", "10 PM");
+// } else {
+//   if (tH === 0) tH = 12;
+//   tH = tH + " AM";
+// }
+// console.log(tH);
