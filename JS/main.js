@@ -123,7 +123,6 @@ function dayPerHours(dhCurr) {
       tH = tH - 12
     } else {
       if (tH === 0) tH = 12;
-      tH = tH;
     }
   let dayHour = ``,
     dayWind = ``;
