@@ -30,7 +30,7 @@
           </div></a
         >
         <button
-          class="navbar-toggler"
+          class="navbar-toggler rounded-top-5 rounded-bottom-5 focus-ring"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -67,6 +67,13 @@
       </div>
     </nav>
     <main>
+      <button class="border-0 bg-transparent d-wMode">
+        <i
+          id="darkMode"
+          class="fa-regular fa-sun fs-3 text-warning d-block"
+        ></i>
+        <i id="lightMode" class="fa-regular fa-moon fs-3 text-light d-none"></i>
+      </button>
       <button
         onclick="getLocation()"
         class="btn text-primary border-primary rounded-5 mb-2 position-absolute"
@@ -83,8 +90,15 @@
               id="search-bar"
               placeholder="Find Your Location..."
             />
+            <div
+              class="ps-3 border border-2 border-top-0 rounded-bottom-5 m-auto row d-none"
+              id="searchList"
+            >
+              <li class="list-unstyled">-</li>
+            </div>
             <a
               class="btn btn-info bg-transparent text-white rounded-pill"
+              id="find"
               >Find</a
             >
           </div>
@@ -95,6 +109,16 @@
               <div class="dot1 bg-info"></div>
               <div class="dot2 bg-info"></div>
             </div>
+          </div>
+          <div>
+            <swiper-container
+              class="mySwiper"
+              id="swiper"
+              pagination="true"
+              pagination-clickable="true"
+              slides-per-view="1"
+            >
+            </swiper-container>
           </div>
         </div>
       </section>
@@ -113,10 +137,11 @@
                 class="row justify-content-center align-items-center g-2"
                 id="hoursDay"
               >
-              <div class="spinner">
-                <div class="dot1 bg-info"></div>
-                <div class="dot2 bg-info"></div>
-              </div></div>
+                <div class="spinner">
+                  <div class="dot1 bg-info"></div>
+                  <div class="dot2 bg-info"></div>
+                </div>
+              </div>
             </div>
             <div class="col-lg-12 mb-5 mt-5">
               <h4
@@ -130,16 +155,21 @@
                 class="row justify-content-center align-items-center g-2"
                 id="windSpeed"
               >
-              <div class="spinner">
-                <div class="dot1 bg-info"></div>
-                <div class="dot2 bg-info"></div>
-              </div></div>
+                <div class="spinner">
+                  <div class="dot1 bg-info"></div>
+                  <div class="dot2 bg-info"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <footer class="bg-primary">
+    <footer
+      style="
+        background-image: linear-gradient(360deg, #0082ff 30%, #59a7ff 70%);
+      "
+    >
       <div class="container footer">
         <div class="row">
           <div class="col-lg-9">
@@ -152,7 +182,10 @@
               />
               <a
                 href="#"
-                class="btn btn-info bg-opacity-50 text-white rounded-pill"
+                class="btn text-white rounded-pill"
+                style="
+                  background-image: linear-gradient(#0082ff 50%, #59a7ff 50%);
+                "
                 >Subscribe</a
               >
             </div>
@@ -191,6 +224,7 @@
         </p>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="./JS/bootstrap.bundle.min.js"></script>
     <script src="JS/main.js"></script>
   </body>

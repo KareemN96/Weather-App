@@ -1,204 +1,222 @@
 *,
 ::after,
 ::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Roboto, "Open Sans", sans-serif;
+  font-family: Roboto, "Open Sans", sans-serif;
 }
 
 .nav-content h6 {
-    font-size: 10px;
+  font-size: 10px;
 }
-
+.d-wMode {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+.nav-link {
+  color: aliceblue;
+}
 .nav-link:hover {
-    border: 3px solid #0D6EFD;
-    border-radius: 2rem;
-    color: #0D6EFD;
-
+  border: 3px solid #0d6efd;
+  border-radius: 2rem;
+  color: #0d6efd;
 }
 
 .header {
-    background-image: url(../Imgs/banner.png);
-    background-repeat: no-repeat;
+  background-image: url(../Imgs/banner.png);
+  background-repeat: no-repeat;
 }
 
 .search-bar input {
-    background-color: transparent;
-    color: aquamarine;
+  background-color: transparent;
+  color: aquamarine;
 }
 
 .search-bar input::placeholder {
-    color: aquamarine;
-
+  color: aquamarine;
 }
 
 .search-bar input:focus {
-    background-color: transparent;
-    color: aquamarine;
-    font-weight: bold;
-
+  background-color: transparent;
+  color: aquamarine;
+  font-weight: bold;
 }
 
 .search-bar a {
-    position: absolute;
-    top: 55px;
-    right: 20px;
-    padding: 10px 50px;
+  position: absolute;
+  top: 55px;
+  right: 20px;
+  padding: 10px 50px;
 }
-
-
+#searchList {
+  width: 95%;
+  color: aquamarine;
+}
+#searchList li {
+  cursor: pointer;
+}
 .footer {
-    padding: 50px 20px;
+  padding: 50px 20px;
 }
 
 .sub-bar input {
-    background-color: transparent;
-    color: aquamarine;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
 }
 
 .sub-bar input::placeholder {
-    color: aquamarine;
+  color: rgb(255, 255, 255);
 }
 
 .sub-bar input:focus {
-    background-color: transparent;
-    color: aquamarine;
-    font-weight: bold;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
 }
 
 .sub-bar a {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    padding: 11px 50px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 11px 50px;
 }
 
+swiper-container {
+  width: 70%;
+  padding-top: 25px;
+}
+
+swiper-slide {
+  height: 275px;
+}
+.footer .btn:hover {
+  background-image: linear-gradient(#59a7ff 50%, #0082ff 50%) !important;
+  color: #055160 !important;
+}
 .footer a i {
-    width: 35px;
-    height: 35px;
-    background-color: rgb(0, 185, 253);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all .7s;
-    margin: 20px 0;
+  width: 35px;
+  height: 35px;
+  background-image: linear-gradient(#0082ff 50%, #59a7ff 50%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.7s;
+  margin: 20px 0;
 }
 
 .footer i:hover {
-    background-color: rgb(3, 73, 99);
-    color: aliceblue;
+  background-image: linear-gradient(#59a7ff 50%, #0082ff 50%);
+  color: aliceblue;
 }
 
-@media(max-width: 990px) {
-    header .container {
-        width: 75% !important;
-    }
+@media (max-width: 990px) {
+  header .container {
+    width: 75% !important;
+  }
 
-    .navbar-collapse ul {
-        background-color: rgb(8, 181, 197);
-        margin: 0 !important;
-        padding-left: 48px !important;
-        border-radius: 10px;
-    }
+  .navbar-collapse ul {
+    background-color: #1296e8;
+    margin: 0 !important;
+    padding-left: 48px !important;
+    border-radius: 10px;
+  }
 
-    .navbar-collapse a {
-        border-top: 1px solid #0D6EFD !important;
-        border-radius: 0 !important;
-        border-left: 0 !important;
-        border-bottom: 0 !important;
-        border-right: 0 !important;
-        color: black !important;
-    }
-
-    .btn {
-        padding: 11px 25px !important;
-    }
+  .navbar-collapse a {
+    border-top: 1px solid hsl(216, 98%, 52%) !important;
+    border-radius: 0 !important;
+    border-left: 0 !important;
+    border-bottom: 0 !important;
+    border-right: 0 !important;
+    color: black !important;
+  }
+  .btn {
+    padding: 11px 25px !important;
+  }
 }
 
 /* Contact Style */
 form .formStyle {
-    background-color: transparent;
-    border: 2px solid #0D6EFD;
+  background-color: transparent;
+  border: 2px solid #0d6efd;
 }
 
 form .formStyle::placeholder {
-    color: #0D6EFD;
+  color: #0d6efd;
 }
 
 form .formStyle:focus {
-    background-color: transparent;
-    color: #0D6EFD;
-    font-weight: bold;
+  background-color: transparent;
+  color: #0d6efd;
+  font-weight: bold;
 }
 
 .spinner {
-    margin: 100px auto;
-    width: 40px;
-    height: 100%;
-    position: relative;
-    text-align: center;
-    -webkit-animation: sk-rotate 2.0s infinite linear;
-    animation: sk-rotate 2.0s infinite linear;
+  margin: 100px auto;
+  width: 40px;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  -webkit-animation: sk-rotate 2s infinite linear;
+  animation: sk-rotate 2s infinite linear;
 }
 
 .dot1,
 .dot2 {
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    background-color: #333;
-    border-radius: 100%;
-    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-    animation: sk-bounce 2.0s infinite ease-in-out;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  background-color: #333;
+  border-radius: 100%;
+  -webkit-animation: sk-bounce 2s infinite ease-in-out;
+  animation: sk-bounce 2s infinite ease-in-out;
 }
 
 .dot2 {
-    top: auto;
-    bottom: 50%;
-    -webkit-animation-delay: -1.0s;
-    animation-delay: -1.0s;
+  top: auto;
+  bottom: 50%;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
 }
 
 @-webkit-keyframes sk-rotate {
-    100% {
-        -webkit-transform: rotate(360deg)
-    }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes sk-rotate {
-    100% {
-        transform: rotate(360deg);
-        -webkit-transform: rotate(360deg)
-    }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @-webkit-keyframes sk-bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+  }
 
-    0%,
-    100% {
-        -webkit-transform: scale(0.0)
-    }
-
-    50% {
-        -webkit-transform: scale(1.0)
-    }
+  50% {
+    -webkit-transform: scale(1);
+  }
 }
 
 @keyframes sk-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
 
-    0%,
-    100% {
-        transform: scale(0.0);
-        -webkit-transform: scale(0.0);
-    }
-
-    50% {
-        transform: scale(1.0);
-        -webkit-transform: scale(1.0);
-    }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
 }
